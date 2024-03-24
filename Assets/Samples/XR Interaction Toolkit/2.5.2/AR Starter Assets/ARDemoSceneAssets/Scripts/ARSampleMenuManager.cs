@@ -164,6 +164,15 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets
                     m_CreateButton.gameObject.SetActive(true);
                     m_DeleteButton.gameObject.SetActive(false);
                 }
+                /*                if (m_InteractionGroup?.focusInteractable != null && !m_DeleteButton.isActiveAndEnabled)
+                                {
+                                    m_DeleteButton.gameObject.SetActive(true);
+                                }
+                                else if (m_InteractionGroup?.focusInteractable == null && m_DeleteButton.isActiveAndEnabled)
+                                {
+                                    m_DeleteButton.gameObject.SetActive(false);
+                                }
+                                m_CreateButton.gameObject.SetActive(true);*/
             }
         }
 

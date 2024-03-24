@@ -27,8 +27,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
         public void add_pop_up(string text)
         {
-            Instantiate(PopUpPrefab,PopUpZone.transform);
-            PopUpPrefab.GetComponent<Text>().text = text;
+            GameObject go = Instantiate(PopUpPrefab,PopUpZone.transform);
+            go.GetComponent<Text>().text = text;
         }
     }
 }

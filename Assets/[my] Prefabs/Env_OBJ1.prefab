@@ -127,6 +127,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_OBJ1
       objectReference: {fileID: 0}
+    - target: {fileID: 2996392715678626154, guid: ebd7292e888c84f05924605e51048072,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3435864238947048048, guid: ebd7292e888c84f05924605e51048072,
         type: 3}
       propertyPath: m_IsActive
@@ -229,6 +234,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 477317634988579088}
+    - targetCorrespondingSourceObject: {fileID: 613292779795284151, guid: ebd7292e888c84f05924605e51048072,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7204350883775529372}
   m_SourcePrefab: {fileID: 100100000, guid: ebd7292e888c84f05924605e51048072, type: 3}
 --- !u!4 &4762239851910345287 stripped
 Transform:
@@ -352,3 +361,16 @@ MonoBehaviour:
   m_ElasticRatioLimit: 0
   m_Sensitivity: 0.75
   m_Elasticity: 0.15
+--- !u!114 &7204350883775529372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8986328500875594450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfe58778a4e1a043b9efdc84eca5fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_type: 3

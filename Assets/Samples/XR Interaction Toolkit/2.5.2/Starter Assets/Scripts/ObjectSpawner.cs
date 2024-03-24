@@ -205,6 +205,18 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             }
 
             var objectIndex = isSpawnOptionRandomized ? Random.Range(0, m_ObjectPrefabs.Count) : m_SpawnOptionIndex;
+            // iceship: spawn index
+            if (objectIndex < 0 || objectIndex >= objectPrefabs.Count)
+            {
+                // system UI display error
+                PopUpToolTip.Instance.add_pop_up("Please select an item to add!");
+                return false;
+            }
+            if (!ObjectManager.Instance.can_spawn(objectIndex))
+            {
+                PopUpToolTip.Instance.add_pop_up("You cannot add this object at this time!");
+                return false;
+            }
             var newObject = Instantiate(m_ObjectPrefabs[objectIndex]);
             if (m_SpawnAsChildren)
                 newObject.transform.parent = transform;
@@ -229,7 +241,9 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 visualizationTrans.position = spawnPoint;
                 visualizationTrans.rotation = newObject.transform.rotation;
             }
-
+            // iceship
+            ObjectManager.Instance.objCount[objectIndex] += 1;
+            ObjectManager.Instance.update_state();
             objectSpawned?.Invoke(newObject);
             return true;
         }
