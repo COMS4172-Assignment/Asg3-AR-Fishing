@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 4.0.2 commit date:2023-12-05, commit time:07:41, hash:9be62e85b727</authoring_tool>
+    </contributor>
+    <created>2024-03-23T16:22:20</created>
+    <modified>2024-03-23T16:22:20</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_geometries>
+    <geometry id="Circle-mesh" name="Circle">
+      <mesh>
+        <source id="Circle-mesh-positions">
+          <float_array id="Circle-mesh-positions-array" count="48">0 1 0 -0.7071068 0.7071068 0 -1 0 0 -0.7071068 -0.7071068 0 0 -1 0 0.7071068 -0.7071068 0 1 0 0 0.7071068 0.7071068 0 -0.7071068 0.7071068 0.02588802 0 1 0.02588802 -1 0 0.02588802 -0.7071068 -0.7071068 0.02588802 0 -1 0.02588802 0.7071068 -0.7071068 0.02588802 1 0 0.02588802 0.7071068 0.7071068 0.02588802</float_array>
+          <technique_common>
+            <accessor source="#Circle-mesh-positions-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Circle-mesh-normals">
+          <float_array id="Circle-mesh-normals-array" count="45">0 0 -1 0 0 1 0 0 1 -0.3826835 0.9238796 0 0.3826835 0.9238796 0 0.9238795 -0.3826835 0 -0.3826835 -0.9238796 0 -0.9238795 0.3826835 0 0.9238796 0.3826833 0 0.3826835 -0.9238796 0 -0.9238796 -0.3826833 0 0.9238796 -0.3826833 0 -0.9238796 0.3826833 0 0.9238795 0.3826835 0 -0.9238795 -0.3826835 0</float_array>
+          <technique_common>
+            <accessor source="#Circle-mesh-normals-array" count="15" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Circle-mesh-map-0">
+          <float_array id="Circle-mesh-map-0-array" count="168">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#Circle-mesh-map-0-array" count="84" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Circle-mesh-vertices">
+          <input semantic="POSITION" source="#Circle-mesh-positions"/>
+        </vertices>
+        <triangles count="28">
+          <input semantic="VERTEX" source="#Circle-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Circle-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Circle-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 0 0 1 6 0 2 8 1 3 14 1 4 9 1 5 6 0 6 2 0 7 1 0 8 5 0 9 2 0 10 6 0 11 5 0 12 3 0 13 2 0 14 4 0 15 3 0 16 5 0 17 6 0 18 0 0 19 7 0 20 14 1 21 8 1 22 10 1 23 13 1 24 14 1 25 10 1 26 13 1 27 10 1 28 11 1 29 12 1 30 13 1 31 11 1 32 14 2 33 15 2 34 9 2 35 1 3 36 9 3 37 0 3 38 0 4 39 15 4 40 7 4 41 6 5 42 13 5 43 5 5 44 4 6 45 11 6 46 3 6 47 2 7 48 8 7 49 1 7 50 7 8 51 14 8 52 6 8 53 5 9 54 12 9 55 4 9 56 3 10 57 10 10 58 2 10 59 1 3 60 8 3 61 9 3 62 0 4 63 9 4 64 15 4 65 6 11 66 14 11 67 13 11 68 4 6 69 12 6 70 11 6 71 2 12 72 10 12 73 8 12 74 7 13 75 15 13 76 14 13 77 5 9 78 13 9 79 12 9 80 3 14 81 11 14 82 10 14 83</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Circle" name="Circle" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Circle-mesh" name="Circle"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
