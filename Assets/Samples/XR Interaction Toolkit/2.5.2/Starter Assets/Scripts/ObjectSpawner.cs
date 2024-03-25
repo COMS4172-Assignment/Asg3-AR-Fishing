@@ -9,6 +9,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
     /// </summary>
     public class ObjectSpawner : MonoBehaviour
     {
+        public GameObject ObjectParent;
         [SerializeField]
         [Tooltip("The camera that objects will face when spawned. If not set, defaults to the main camera.")]
         Camera m_CameraToFace;
@@ -217,7 +218,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 PopUpToolTip.Instance.add_pop_up("You cannot add this object at this time!");
                 return false;
             }
-            var newObject = Instantiate(m_ObjectPrefabs[objectIndex]);
+            var newObject = Instantiate(m_ObjectPrefabs[objectIndex],ObjectParent.transform);
             if (m_SpawnAsChildren)
                 newObject.transform.parent = transform;
 
