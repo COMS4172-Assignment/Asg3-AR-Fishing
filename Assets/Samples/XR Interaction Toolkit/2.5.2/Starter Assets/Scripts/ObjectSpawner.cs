@@ -71,13 +71,6 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             set => m_SpawnOptionIndex = value;
         }
 
-        /// <summary>
-        /// Whether this behavior will select a random object from <see cref="objectPrefabs"/> each time it spawns.
-        /// </summary>
-        /// <seealso cref="spawnOptionIndex"/>
-        /// <seealso cref="RandomizeSpawnOption"/>
-        public bool isSpawnOptionRandomized => m_SpawnOptionIndex < 0 || m_SpawnOptionIndex >= m_ObjectPrefabs.Count;
-
         [SerializeField]
         [Tooltip("Whether to only spawn an object if the spawn point is within view of the camera.")]
         bool m_OnlySpawnInView = true;
@@ -167,15 +160,6 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 m_CameraToFace = Camera.main;
         }
 
-        /// <summary>
-        /// Sets this behavior to select a random object from <see cref="objectPrefabs"/> each time it spawns.
-        /// </summary>
-        /// <seealso cref="spawnOptionIndex"/>
-        /// <seealso cref="isSpawnOptionRandomized"/>
-        public void RandomizeSpawnOption()
-        {
-            m_SpawnOptionIndex = -1;
-        }
 
         /// <summary>
         /// Attempts to spawn an object from <see cref="objectPrefabs"/> at the given position. The object will have a
@@ -205,20 +189,22 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 }
             }
 
-            var objectIndex = isSpawnOptionRandomized ? Random.Range(0, m_ObjectPrefabs.Count) : m_SpawnOptionIndex;
+            var objectIndex = m_SpawnOptionIndex;
             // iceship: spawn index
             if (objectIndex < 0 || objectIndex >= objectPrefabs.Count)
             {
                 // system UI display error
-                PopUpToolTip.Instance.add_pop_up("Please select an item to add!");
+                //PopUpToolTip.Instance.add_pop_up("Select an item to add");
                 return false;
             }
             if (!ObjectManager.Instance.can_spawn(objectIndex))
             {
-                PopUpToolTip.Instance.add_pop_up("You cannot add this object at this time!");
+                PopUpToolTip.Instance.add_pop_up("Cannot add "+ objectPrefabs[objectIndex].name +" now");
                 return false;
             }
             var newObject = Instantiate(m_ObjectPrefabs[objectIndex],ObjectParent.transform);
+            m_SpawnOptionIndex = -1; // shall select explicitally next time
+            ObjectManager.Instance.menu_unselect_all();
             if (m_SpawnAsChildren)
                 newObject.transform.parent = transform;
 

@@ -573,8 +573,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ObjectPlaneTranslationMode: 2
   m_UseInteractorOrientation: 0
-  m_MinScale: 0.05
-  m_MaxScale: 2
+  m_MinScale: 0.1
+  m_MaxScale: 1
   m_ScaleSensitivity: 0.75
   m_Elasticity: 0.15
   m_EnableElasticBreakLimit: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8986328500875594450}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bd997ad0c1d2434f95bde472c2f2232, type: 3}
   m_Name: 
@@ -702,6 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_type: 1
+  value: 0
 --- !u!1001 &5573221781471401138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -713,17 +714,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c98ee3979d355b94cbdf83f2e633f772,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c98ee3979d355b94cbdf83f2e633f772,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c98ee3979d355b94cbdf83f2e633f772,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c98ee3979d355b94cbdf83f2e633f772,
         type: 3}
@@ -733,7 +734,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c98ee3979d355b94cbdf83f2e633f772,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c98ee3979d355b94cbdf83f2e633f772,
         type: 3}

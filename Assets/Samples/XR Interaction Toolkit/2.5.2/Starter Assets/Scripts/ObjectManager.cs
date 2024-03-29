@@ -43,6 +43,7 @@ public class ObjectManager : MonoBehaviour
     {
         //stage = STAGE.s1_pond;
         update_state();
+        menu_unselect_all();
     }
 
     public void update_state()
@@ -96,5 +97,18 @@ public class ObjectManager : MonoBehaviour
             PopUpToolTip.Instance.add_pop_up("Note: you can only add 4 fish! (just for demo)");
         }
         return obj_buttons[index].interactable == true;
+    }
+
+    public void menu_unselect_all()
+    {
+        foreach (Button b in obj_buttons)
+        {
+            // find child called selectionbox 
+            Transform selectionbox = b.transform.Find("SelectionBox");
+            if (selectionbox != null)
+            {
+                selectionbox.gameObject.SetActive(false);
+            }
+        }
     }
 }

@@ -9,6 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 public class GameManager : MonoBehaviour
 {
     public GameObject ObjectParent;
+    public ObjectSpawner objectSpawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,15 @@ public class GameManager : MonoBehaviour
 
         //after your loop
         File.WriteAllText(filePath, csv.ToString());
-        PopUpToolTip.Instance.add_pop_up("Scene file saved!");
+        PopUpToolTip.Instance.add_pop_up("Scene file saved");
+    }
+
+    public void reset_gameobjects()
+    {
+        foreach (Transform child in ObjectParent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        // not need to reset objCount
     }
 }
